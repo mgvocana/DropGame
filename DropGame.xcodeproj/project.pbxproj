@@ -11,6 +11,7 @@
 		B34A94DD2742DD66000E2660 /* DropGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34A94DC2742DD66000E2660 /* DropGameView.swift */; };
 		B34A94DF2742DD67000E2660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34A94DE2742DD67000E2660 /* Assets.xcassets */; };
 		B34A94E22742DD67000E2660 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34A94E12742DD67000E2660 /* Preview Assets.xcassets */; };
+		B34A94EF2742DE3E000E2660 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34A94EE2742DE3E000E2660 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B34A94DE2742DD67000E2660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B34A94E12742DD67000E2660 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B34A94E32742DD67000E2660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B34A94EE2742DE3E000E2660 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +54,9 @@
 		B34A94D92742DD66000E2660 /* DropGame */ = {
 			isa = PBXGroup;
 			children = (
-				B34A94DA2742DD66000E2660 /* DropGameApp.swift */,
+				B34A94ED2742DE2D000E2660 /* Scenes */,
+				B34A94EB2742DDFB000E2660 /* Resources */,
 				B34A94DC2742DD66000E2660 /* DropGameView.swift */,
-				B34A94DE2742DD67000E2660 /* Assets.xcassets */,
-				B34A94E32742DD67000E2660 /* Info.plist */,
 				B34A94E02742DD67000E2660 /* Preview Content */,
 			);
 			path = DropGame;
@@ -67,6 +68,24 @@
 				B34A94E12742DD67000E2660 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B34A94EB2742DDFB000E2660 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B34A94DA2742DD66000E2660 /* DropGameApp.swift */,
+				B34A94DE2742DD67000E2660 /* Assets.xcassets */,
+				B34A94E32742DD67000E2660 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B34A94ED2742DE2D000E2660 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B34A94EE2742DE3E000E2660 /* GameScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34A94EF2742DE3E000E2660 /* GameScene.swift in Sources */,
 				B34A94DD2742DD66000E2660 /* DropGameView.swift in Sources */,
 				B34A94DB2742DD66000E2660 /* DropGameApp.swift in Sources */,
 			);
