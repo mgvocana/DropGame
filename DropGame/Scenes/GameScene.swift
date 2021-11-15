@@ -38,7 +38,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     
     private func assignColorAndBitmask() -> UIColor
     {
-        let colors : [UIColor] = [.cyan, .purple, .magenta]
+        let colors : [UIColor] = [.cyan, .purple, .magenta, .green]
         let randomIndex = Int(arc4random()) % colors.count
         
         colorMask = randomIndex + 1
