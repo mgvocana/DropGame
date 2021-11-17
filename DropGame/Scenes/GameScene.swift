@@ -85,6 +85,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     private func annihilate(deadNode : SKNode) -> Void
     {
         score += 10
+        explosionEffect(at: deadNode.position)
         deadNode.removeFromParent()
     }
     
