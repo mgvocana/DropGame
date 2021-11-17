@@ -9,8 +9,10 @@ import SpriteKit
 
 class GameScene : SKScene, SKPhysicsContactDelegate
 {
+    //MARK: Data members
     private var colorMask : Int = 0b0000
     
+    //MARK: - SKScene override methods
     override func didMove(to view : SKView)
     {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -36,6 +38,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         addChild(node)
     }
     
+    //MARK: - Custom methods
     private func assignColorAndBitmask() -> UIColor
     {
         let colors : [UIColor] = [.cyan, .purple, .magenta, .green]
@@ -46,6 +49,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         return colors[randomIndex]
     }
     
+    //MARK: - Physics handling methods
     private func annihilate(deadNode : SKNode) -> Void
     {
         deadNode.removeFromParent()
