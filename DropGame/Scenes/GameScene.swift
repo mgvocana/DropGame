@@ -67,6 +67,20 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         return colors[randomIndex]
     }
     
+    private func explosionEffect(at location: CGPoint) -> Void
+    {
+        if let explosion = SKEmitterNode(fileNamed: "SparkParticle")
+        {
+            explosion.position = location
+            addChild(explosion)
+            let waitTime = SKAction.wait(forDuration: 5)
+            let removeExplosion = SKAction.removeFromParent()
+            let explosiveSequence = SKAction.sequence([waitTime, removeExplosion])
+            
+            explosion.run(explosiveSequence)
+        }
+    }
+    
     //MARK: - Physics handling methods
     private func annihilate(deadNode : SKNode) -> Void
     {
