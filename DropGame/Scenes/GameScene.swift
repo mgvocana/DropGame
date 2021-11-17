@@ -12,7 +12,6 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     //MARK: Data members
     private var colorMask : Int = 0b0000
     
-    private let scoreNode : SKLabelNode = SKLabelNode(fontNamed: "Chamber Black-Bold")
     private var score : Int = -0
     {
         didSet
@@ -20,12 +19,22 @@ class GameScene : SKScene, SKPhysicsContactDelegate
             scoreNode.text = "Current Score: \(score)"
         }
     }
+    private let scoreNode : SKLabelNode = SKLabelNode(fontNamed: "Charter-Bold")
+
     
     //MARK: - SKScene override methods
     override func didMove(to view : SKView)
     {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self
+        
+        //Add score label
+        scoreNode.zPosition = 2
+        scoreNode.position.x = 120
+        scoreNode.position.y = 385
+        scoreNode.fontSize = 20
+        addChild(scoreNode)
+        score = 0 //Force a call to the didSet observer
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event : UIEvent?)
@@ -61,6 +70,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     //MARK: - Physics handling methods
     private func annihilate(deadNode : SKNode) -> Void
     {
+        score += 10
         deadNode.removeFromParent()
     }
     

@@ -10,8 +10,8 @@ import SpriteKit
 
 struct DropGameView: View
 {
-    let height : CGFloat = 300
-    let width : CGFloat = 400
+    let height : CGFloat = 400
+    let width : CGFloat = 300
     
     private var simpleScene : GameScene
     {
