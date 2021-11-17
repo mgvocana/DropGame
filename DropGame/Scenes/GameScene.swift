@@ -20,6 +20,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         }
     }
     private let scoreNode : SKLabelNode = SKLabelNode(fontNamed: "Charter-Bold")
+    let catTexture = SKTexture(imageNamed: "cat")
 
     
     //MARK: - SKScene override methods
@@ -51,7 +52,8 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         let height = Int(arc4random() % 50)
         let location = touch.location(in: self)
         let node : SKSpriteNode
-        node = SKSpriteNode(color: currentColor, size: CGSize(width: width, height: height))
+        node = SKSpriteNode(texture: catTexture, color: currentColor, size: CGSize(width: width, height: height))
+        node.colorBlendFactor = 1.0
         node.position = location
         
         node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: width, height: height))
@@ -96,6 +98,11 @@ class GameScene : SKScene, SKPhysicsContactDelegate
             let speedUp = SKAction.changePlaybackRate(by: 1.5, duration: 10)
             sound.run(speedUp)
         }
+    }
+    
+    private func endGame() -> Void
+    {
+        
     }
     
     //MARK: - Physics handling methods
