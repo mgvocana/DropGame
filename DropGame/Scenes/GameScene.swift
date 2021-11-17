@@ -35,6 +35,11 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         scoreNode.fontSize = 20
         addChild(scoreNode)
         score = 0 //Force a call to the didSet observer
+        
+        //Add Audio
+        let backgroundMusic  = SKAudioNode(fileNamed: "Go")
+        backgroundMusic.name = "music"
+        addChild(backgroundMusic)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event : UIEvent?)
@@ -77,7 +82,19 @@ class GameScene : SKScene, SKPhysicsContactDelegate
             let removeExplosion = SKAction.removeFromParent()
             let explosiveSequence = SKAction.sequence([waitTime, removeExplosion])
             
+            let effectSound = SKAction.playSoundFileNamed("drop bass", waitForCompletion: false)
+            run(effectSound)
+            
             explosion.run(explosiveSequence)
+        }
+    }
+    
+    private func updateSound() -> Void
+    {
+        if let sound = childNode(withName: "music")
+        {
+            let speedUp = SKAction.changePlaybackRate(by: 1.5, duration: 10)
+            sound.run(speedUp)
         }
     }
     
@@ -86,6 +103,7 @@ class GameScene : SKScene, SKPhysicsContactDelegate
     {
         score += 10
         explosionEffect(at: deadNode.position)
+        updateSound()
         deadNode.removeFromParent()
     }
     

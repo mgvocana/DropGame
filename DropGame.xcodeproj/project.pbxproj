@@ -62,8 +62,6 @@
 		B34A94D92742DD66000E2660 /* DropGame */ = {
 			isa = PBXGroup;
 			children = (
-				B3F2676827458F6C001116C2 /* Sounds */,
-				B3F2675627458985001116C2 /* Particles */,
 				B34A94ED2742DE2D000E2660 /* Scenes */,
 				B34A94EB2742DDFB000E2660 /* Resources */,
 				B34A94DC2742DD66000E2660 /* DropGameView.swift */,
@@ -83,6 +81,8 @@
 		B34A94EB2742DDFB000E2660 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3F2675627458985001116C2 /* Particles */,
+				B3F2676827458F6C001116C2 /* Sounds */,
 				B34A94DA2742DD66000E2660 /* DropGameApp.swift */,
 				B34A94DE2742DD67000E2660 /* Assets.xcassets */,
 				B34A94E32742DD67000E2660 /* Info.plist */,
