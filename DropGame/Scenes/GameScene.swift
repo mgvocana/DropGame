@@ -61,6 +61,20 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         node.physicsBody?.contactTestBitMask = UInt32(colorMask)
         
         addChild(node)
+        if (score >= 1000)
+        {
+            endGame()
+        }
+    }
+    
+    private func endGame() -> Void
+    {
+        let transition = SKTransition.fade(with: .cyan, duration: 5)
+        let endScene = EndGameScene()
+        endScene.score = score
+        endScene.size = CGSize(width: 300, height: 400)
+        endScene.scaleMode = .fill
+        self.view?.presentScene(endScene, transition: transition)
     }
     
     //MARK: - Custom methods
@@ -100,10 +114,6 @@ class GameScene : SKScene, SKPhysicsContactDelegate
         }
     }
     
-    private func endGame() -> Void
-    {
-        
-    }
     
     //MARK: - Physics handling methods
     private func annihilate(deadNode : SKNode) -> Void
